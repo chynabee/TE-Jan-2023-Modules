@@ -9,7 +9,9 @@ public class Lecture {
 			Then set it to 26.
 		*/
 
-		//System.out.println(numberOfExercises);
+		int numberofExercises = 26;
+
+		System.out.println(numberofExercises);
 
 		/*
 		2. Create a variable to hold a double and call it half.
