@@ -4,6 +4,16 @@ public class Main {
 
     public static void main(String[] args) {
 
+
+
+        double danBalance = 3.00;
+        double candyBarCost = 1.00;
+        int newDanBalance = (int)(danBalance - candyBarCost);
+
+        float newCandyBarCost = (float)candyBarCost;
+
+        int bal = (int)newDanBalance;
+
         //declaration      assignment
         String message = "Hello World";
 
