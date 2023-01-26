@@ -24,7 +24,13 @@ public class Exercise05_AcceptPackage {
     acceptPackage(50) ➔ false
      */
     public boolean acceptPackage(int weightPounds) {
-        return false;
+
+        if (weightPounds <= 40) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
     /*
@@ -41,7 +47,14 @@ public class Exercise05_AcceptPackage {
     acceptPackage(50, 4, 5, 10) ➔ false
      */
     public boolean acceptPackage(int weightPounds, int lengthInches, int widthInches, int heightInches) {
-        return false;
+
+        if (weightPounds <= 40 && (lengthInches * widthInches * heightInches) <= 6912) {
+            return true;
+        } else {
+            return false;
+        }
+
+
     }
 
     /*
@@ -64,6 +77,24 @@ public class Exercise05_AcceptPackage {
     acceptPackage(50, 4, 5, 10, true) ➔ false
      */
     public boolean acceptPackage(int weightPounds, int lengthInches, int widthInches, int heightInches, boolean isSurchargePaid) {
-        return false;
+        if (lengthInches >= 66 || widthInches >= 66 || heightInches >= 66) {
+            if (weightPounds <= 40 && (lengthInches * widthInches * heightInches) <= 6912 && isSurchargePaid) {
+                return true;
+
+            } else {
+                return false;
+            }
+
+        } else if (weightPounds <= 40 && (lengthInches * widthInches * heightInches) <= 6912) {
+            return true;
+        } else {
+            return false;
+        }
     }
+
 }
+
+// if dimension is greater than or equal to 66 inches and there is a surcharge return true
+    // if there is a surcharge is the surcharge paid?
+// if yes then return true
+//if no return false.

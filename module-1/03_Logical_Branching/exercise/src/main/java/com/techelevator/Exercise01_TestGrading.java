@@ -18,7 +18,17 @@ public class Exercise01_TestGrading {
     gradeTestPassFail(45) ➔ false
      */
     public boolean gradeTestPassFail(int score) {
-        return false;
+
+        //if the score is greater than or equal to 70 then we can return true
+
+        if (score >= 70) {
+            return true;
+
+        } else {
+            //else if its below 70 then return false
+
+            return false;
+        }
     }
 
     /*
@@ -37,7 +47,26 @@ public class Exercise01_TestGrading {
     gradeTestNumeric(10) ➔ 0
      */
     public int gradeTestNumeric(int score) {
-        return 0;
+
+        //if score is greater than or equal to 90 we return 3
+        if (score >= 90) {
+            return 3;
+
+        }
+        //else if score  is greater than or equal to 50 and less than or equal to 89 then return 2
+        else if (score >= 50 && score <= 89) {
+            return 2;
+
+        }
+        //else if score greater than 25 and less than or equal 49 then return 1
+        else if (score >= 25 && score <= 49) {
+            return 1;
+        }
+        // else return 0
+        else {
+            return 0;
+        }
+
     }
 
     /*
@@ -56,6 +85,31 @@ public class Exercise01_TestGrading {
     gradeTestLetter(45) ➔ 'F'
      */
     public char gradeTestLetter(int score) {
-        return ' ';
+
+        //if score greater than or equal to 90 then return A
+        if (score >= 90) {
+            return 'A';
+
+        }
+
+        //else if score greater than or equal to 80 and less than or equal to 89 then return B
+        else if (score >= 80 && score <= 89) {
+            return 'B';
+        }
+
+        //else if score greater than or equal to 70 and less than or equal to 79 then return C
+        else if (score >= 70 && score <= 79) {
+            return 'C';
+        }
+
+        //else if score greater than or equal to 60 and less than or equal to 69 then return D
+        else if (score >= 60 && score <= 69) {
+            return 'D';
+        }
+
+        //else
+        else {
+            return 'F';
+        }
     }
 }
