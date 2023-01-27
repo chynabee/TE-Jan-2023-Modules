@@ -4,7 +4,7 @@ public class Scratch {
 
     public static void main(String[] args) {
 
-
+/*
         String[] groceries = {"bread", "milk", "eggs"};
 
         System.out.println( groceries.length );
@@ -60,6 +60,33 @@ public class Scratch {
 
          */
 
+        /*
+        1. init (int i = 0) : this is where we are setting the stage, waiting for something to happen.
+                                No one has knocked on the door yet
+         2. condition i < 5 : this is setting the expectation for how many times we have to count
+                                I'm waiting for 5 knocks
+        3. iterator i++ : this is how we are counting (either one at a time with i++, or two at a time with i +=2, or counting down i--, etc.
+         */
+        for(int i = 0; i < 5; i++) {
+            System.out.println("knock");
+        }
+
+        System.out.println("open the door");
+
+        int[] checks = {20, 50, 100, 20};
+        int accountBalance = 0;
+
+
+        //deposit each check
+
+        for(int i = 0; i < checks.length; i++ ) {
+
+            // += is shorthand and means the same thing as accountBalance = accountBalance + checks[i];
+            accountBalance += checks[i];
+
+        }
+
+        System.out.println("Our account balance is " + accountBalance);
     }
 
     public static void createArray(int numOfElements) {
