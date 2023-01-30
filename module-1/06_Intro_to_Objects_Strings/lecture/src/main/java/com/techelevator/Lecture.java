@@ -1,8 +1,26 @@
 package com.techelevator;
 
+import java.util.Locale;
+
 public class Lecture {
 
 	public static void main(String[] args) {
+		/*
+		//this is the object based on the Person blueprint (class)
+		Person christopher = new Person();
+		Person christopher2 = new Person();
+		if(christopher == christopher2) { //false
+		}
+
+		if(christopher.equals(christopher2)) { // this can be true
+		}
+
+
+
+
+		*/
+
+
 
 		System.out.println("************************************");
 		System.out.println("****** MAKING A STRING OBJECT ******");
@@ -15,6 +33,9 @@ public class Lecture {
 
 		/* create an new instance of String using a literal */
 
+		String animal = "cat";
+		String pet = "dog";
+
 		
 		System.out.println();
 		System.out.println("******************************");
@@ -22,6 +43,44 @@ public class Lecture {
 		System.out.println("******************************");
 		System.out.println();
 
+		String company = "Tech Elevator";
+		boolean endsWithElevator = company.endsWith("Elevator");
+		System.out.println("Ends with Elevator: " + endsWithElevator);
+
+		boolean endsWithTech = company.endsWith("Tech");
+		System.out.println("Ends with Tech: " + endsWithTech);
+
+		boolean endsWithTor = company.endsWith("tor");
+		System.out.println("Ends with tor: " + endsWithTor);
+
+		boolean startsWithT = company.startsWith("T");
+		System.out.println("Starts with T: " + startsWithT);
+
+		int indexOfFirstInstance = company.indexOf("e");
+		System.out.println("Index of e: " + indexOfFirstInstance);
+
+		int lastIndexOfInstance = company.lastIndexOf("e");
+		System.out.println("Last index of e: " + lastIndexOfInstance);
+
+		System.out.println("Length of my string is: " + company.length());
+
+		String partOfString = company.substring(0, 4);
+		System.out.println("Substring starting at 0 and going until 4: " + partOfString);
+
+		int indexOfSpace = company.indexOf(" ");
+		String lastPartOfString = company.substring(indexOfSpace+1);
+		System.out.println("Substring after the space: " + lastPartOfString);
+
+		System.out.println("All to lower case: " + company.toLowerCase());
+
+		System.out.println("All to upper case: " + company.toUpperCase());
+
+		String withSpaceExample = "      Tech Elevator      ";
+		System.out.println("Trim any whitespace: " + withSpaceExample.trim());
+
+		System.out.println("Replacing each instance of e with E: " + company.replace("e", "E"));
+
+		//See all commonly used methods from below up above.
 
 		/* Other commonly used methods:
 		 *
@@ -34,6 +93,7 @@ public class Lecture {
 		 * toLowerCase
 		 * toUpperCase
 		 * trim
+		 * replace
 		 */
 
 		System.out.println();

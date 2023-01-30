@@ -8,8 +8,10 @@ public class Exercises {
 	 helloName("Alice") → "Hello Alice!"
 	 helloName("X") → "Hello X!"
 	 */
-	public String helloName(String name) {
-		return null;
+	public String helloName(String Chyna) {
+
+
+		return "Hello " + Chyna + "!";
 	}
 
 	/*
@@ -19,8 +21,11 @@ public class Exercises {
 	 makeAbba("Yo", "Alice") → "YoAliceAliceYo"
 	 makeAbba("What", "Up") → "WhatUpUpWhat"
 	 */
-	public String makeAbba(String a, String b) {
-		return null;
+	public String makeAbba(String Hi, String Bye) {
+
+
+
+		return Hi + Bye + Bye + Hi;
 	}
 
 	/*
@@ -32,7 +37,8 @@ public class Exercises {
 	 makeTags("cite", "Yay") → "<cite>Yay</cite>"
 	 */
 	public String makeTags(String tag, String word) {
-		return null;
+
+		return  "<" + tag + ">" + word + "</" + tag + ">";
 	}
 
 	/*
@@ -44,7 +50,9 @@ public class Exercises {
 	 makeOutWord("[[]]", "word") → "[[word]]"
 	 */
 	public String makeOutWord(String out, String word) {
-		return null;
+
+
+		return null ;
 	}
 
 	/*
