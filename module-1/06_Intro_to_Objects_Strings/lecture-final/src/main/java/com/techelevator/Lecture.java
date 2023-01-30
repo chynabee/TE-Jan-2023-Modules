@@ -97,6 +97,9 @@ public class Lecture {
 		String withSpaceExample = "       Tech Elevator        ";
 		System.out.println("Trim any whitespace: " + withSpaceExample.trim());
 
+
+		System.out.println("Replacing each instance of e with E: " + company.replace("e", "E"));
+
 		/* Other commonly used methods:
 		 *
 		 * endsWith
