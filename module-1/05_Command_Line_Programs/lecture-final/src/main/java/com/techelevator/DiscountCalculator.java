@@ -41,6 +41,36 @@ class DiscountCalculator {
         }
 
 
+        String name = "Christopher";
+        String name2 = new String("Christopher");
+
+        String[] names = new String[1000000];
+
+        int person1Age = 19;
+        int person2Age = 34;
+        int person3Age = 28;
+        int person4Age = 50;
+        int person5Age = 100;
+
+     //   int averageAge = (person1Age + person2Age + person3Age + person4Age + person5Age) / 5;
+
+        int[] ages = {19,34,28,50,100, 75, 10, 44};
+        int sum = 0;
+
+        int count = 0;
+        while(count < ages.length) {
+            sum += ages[count];
+            count++;
+        }
+
+        for(int i = 0; i < ages.length; i++) {
+            //sum = sum + ages[i];
+            sum += ages[i];
+        }
+
+        int averageAge = sum / ages.length;
+
+
 
 
         System.out.println("Finished");
