@@ -62,6 +62,7 @@ public class Lecture {
 
 		String company = "Tech Elevator";
 
+
 		boolean endsWithElevator = company.endsWith("Elevator");
 		System.out.println("Ends with Elevator: " + endsWithElevator);
 
@@ -143,6 +144,26 @@ public class Lecture {
 		} else {
 			System.out.println(hello1 + " is not equal to " + hello2);
 		}
+
+
+
+		String userInputFirstName = "Joe   ";
+		String userInputLastName = "Smith";
+		String combined = userInputFirstName.trim() +" " + userInputLastName;
+		System.out.println(combined);
+
+		for(int i=0; i < combined.length(); i++){
+
+		}
+
+
+		int[] ages = {10,20,30,40,50};
+		for(int i = 0; i < ages.length; i++){
+
+		}
+
+
+
 
 	}
 }
