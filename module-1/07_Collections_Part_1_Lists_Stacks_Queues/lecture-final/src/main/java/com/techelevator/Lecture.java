@@ -186,5 +186,14 @@ public class Lecture {
 		System.out.println("First person out of line:" + peopleInLine.poll());
 		System.out.println("Second person out of line:" + peopleInLine.poll());
 		System.out.println("Third person out of line:" + peopleInLine.poll());
+
+		Double myDouble = 5.5;
+		Integer number = 5;
+		String numberStr = number.toString();
+
+		//from string to int
+		int myVal = Integer.parseInt(numberStr);
+
+		Integer convertedIntegerFromPrimitive = Integer.valueOf(5);
 	}
 }
