@@ -39,6 +39,7 @@ public class BankAccount {
 
     // Getters
     public String getAccountNumber(){
+
         return "**********" + accountNumber.substring(accountNumber.length() - 4);
     }
 
