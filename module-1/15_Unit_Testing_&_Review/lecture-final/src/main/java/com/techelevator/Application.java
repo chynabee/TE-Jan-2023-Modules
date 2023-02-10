@@ -21,6 +21,13 @@ public class Application  {
         List<Racer> racers = new ArrayList<>();
 
         MediumCart mario = new MediumCart("Mario");
+
+        if(mario.getName().equals("Mario")) {
+            System.out.println("Our code is working as expected!");
+        }
+
+
+
         MediumCart luigi = new MediumCart("Luigi");
 
         SmallCart toad = new SmallCart("Toad");
@@ -42,7 +49,7 @@ public class Application  {
 
             System.out.println();
             System.out.println("Lap " + (i+1) + ":");
-            Collections.shuffle(racers);
+            Collections.sort(racers);
 
             for(Racer racer : racers) {
                 System.out.println(racer.toString());

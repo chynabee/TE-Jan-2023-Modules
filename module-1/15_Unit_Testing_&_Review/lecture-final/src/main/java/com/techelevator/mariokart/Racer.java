@@ -1,6 +1,8 @@
 package com.techelevator.mariokart;
 
-public abstract class Racer {
+import java.io.Serializable;
+
+public abstract class Racer implements Serializable, Comparable {
 
     public static final String LARGE = "Large";
     public static final String MEDIUM = "Medium";
@@ -9,6 +11,7 @@ public abstract class Racer {
     // instance variables
     private String name;
     private String size;
+    private String catchPhrase;
 
     //constructor
     public Racer(String name, String size) {
@@ -28,7 +31,7 @@ public abstract class Racer {
     public abstract int getMaxSpeed();
 
     public String getName() {
-        return null;
+        return name ;
     }
 
     public void setName(String name) {
@@ -43,5 +46,9 @@ public abstract class Racer {
         this.size = size;
     }
 
-
+    @Override
+    public int compareTo(Object o) {
+        Racer racer = (Racer) o;
+        return getName().compareTo(racer.getName());
+    }
 }

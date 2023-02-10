@@ -9,4 +9,6 @@ public class MediumCart extends Racer{
     public int getMaxSpeed() {
         return 125;
     }
+
+
 }
