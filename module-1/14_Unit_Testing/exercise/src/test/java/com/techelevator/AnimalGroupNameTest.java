@@ -33,16 +33,16 @@ public class AnimalGroupNameTest {
 
     }
 
-    @Test
-    public void test_getHerdWalrus(){
+    @Test //step 1
+    public void test_getHerdWalrus(){  //step 2
 
-        //Arrange - declare class I want to test
+        //Arrange - declare class I want to test  // step 3
         AnimalGroupName animalGroupName = new AnimalGroupName();
 
-        //Act - call the method I want to test and store the result
+        //Act - call the method I want to test and store the result // step 4
         String result = animalGroupName.getHerd("walrus");
 
-        //Assert - make sure result is the same as what we expect
+        //Assert - make sure result is the same as what we expect // step 5
         Assert.assertEquals("unknown", result);
 
     }
