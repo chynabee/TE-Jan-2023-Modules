@@ -7,6 +7,6 @@ public class SmallCart extends Racer{
     }
 
     public int getMaxSpeed() {
-        return 150;
+        return 200;
     }
 }

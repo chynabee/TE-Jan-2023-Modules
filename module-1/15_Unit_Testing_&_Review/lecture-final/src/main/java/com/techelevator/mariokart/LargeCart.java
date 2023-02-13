@@ -8,6 +8,10 @@ public class LargeCart extends Racer{
     }
 
     public int getMaxSpeed(){
-        return 100;
+        return 75;
+    }
+
+    public void bump(Racer racer){
+        racer.addDamage();
     }
 }
