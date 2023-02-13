@@ -36,6 +36,7 @@ public class Application  {
         LargeCart bowser = new LargeCart("Bowser");
         LargeCart wario = new LargeCart("Wario");
 
+
         racers.add(mario);
         racers.add(luigi);
         racers.add(princessPeach);
@@ -45,14 +46,33 @@ public class Application  {
 
         System.out.println(mario.toString());
 
+
         for(int i=0; i < 3; i++) {
 
             System.out.println();
             System.out.println("Lap " + (i+1) + ":");
             Collections.sort(racers);
 
-            for(Racer racer : racers) {
-                System.out.println(racer.toString());
+            for(int j=0; j < racers.size(); j++) {
+                Racer currentRacer = racers.get(j);
+
+                if(currentRacer instanceof LargeCart) {
+
+                    LargeCart largeCart = (LargeCart) currentRacer;
+                    if (j > 0) { //make sure we're not at the very beginning
+                        largeCart.bump(racers.get(j-1)); // bump the person behind us
+
+                        // shortcut for System.out.println is to type sout and hit enter
+                        System.out.println(largeCart.getName() + " bumped " + racers.get(j-1).getName());
+
+                    }
+                    if(j < racers.size()-2) {
+                        largeCart.bump(racers.get(j+1)); // bump the person in front of us
+                        System.out.println(largeCart.getName() + " bumped " + racers.get(j+1).getName());
+                    }
+                }
+
+                System.out.println(currentRacer.toString());
             }
 
         }

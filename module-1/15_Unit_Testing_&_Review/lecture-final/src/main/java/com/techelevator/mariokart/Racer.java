@@ -12,11 +12,20 @@ public abstract class Racer implements Serializable, Comparable {
     private String name;
     private String size;
     private String catchPhrase;
+    private int damage = 0;
 
     //constructor
     public Racer(String name, String size) {
         this.name = name;
         this.size = size;
+    }
+
+    public int getDamage(){
+        return damage;
+    }
+
+    public void addDamage(){
+        damage += 10;
     }
 
     public static void sayCatchPhrase(){
@@ -48,7 +57,15 @@ public abstract class Racer implements Serializable, Comparable {
 
     @Override
     public int compareTo(Object o) {
-        Racer racer = (Racer) o;
-        return getName().compareTo(racer.getName());
+        Racer otherRacer = (Racer) o;
+
+        int myScore = getMaxSpeed() - getDamage();
+        //add some randomness
+        int myRandomScore = (int)(myScore * Math.random());
+
+        int otherScore = otherRacer.getMaxSpeed() - getDamage();
+        int otherRandomScore = (int) (otherScore * Math.random());
+        return myRandomScore - otherRandomScore;
+
     }
 }
