@@ -106,16 +106,27 @@ FROM park;
 -- GROUP BY
 
 -- Count the number of cities in each state, ordered from most cities to least.
-
+SELECT state_abbreviation, COUNT(*) as num_cities
+FROM city
+GROUP BY state_abbreviation
+ORDER BY num_cities DESC;
 
 -- Determine the average park area depending upon whether parks allow camping or not.
-
+SELECT has_camping, AVG(area) as avg_park_area
+FROM park
+GROUP BY has_camping;
 
 -- Sum of the population of cities in each state ordered by state abbreviation.
-
+SELECT state_abbreviation, SUM(population) AS total_population
+FROM city
+GROUP BY state_abbreviation
+ORDER BY state_abbreviation, total_population;
 
 -- The smallest city population in each state ordered by city population.
-
+SELECT state_abbreviation, MIN(population) AS smallest_city
+FROM city
+GROUP BY state_abbreviation
+ORDER BY smallest_city;
 
 
 -- Miscelleneous
@@ -126,16 +137,33 @@ FROM park;
 -- For instance, to get the first 10 rows in the city table
 -- ordered by the name, you could use the following query.
 -- (Skip 0 rows, and return only the first 10 rows from the sorted result set.)
+SELECT *
+FROM city
+ORDER BY city_name
+OFFSET 10 ROWS FETCH NEXT 10 ROWS ONLY;
 
+SELECT *
+FROM city
+ORDER BY city_name
+OFFSET 10 ROWS LIMIT 10;
 
 
 -- SUBQUERIES (optional)
 
 -- Include state name rather than the state abbreviation while counting the number of cities in each state,
-
+SELECT COUNT(*) as num_cities, (SELECT state_name FROM state WHERE state_abbreviation = c.state_abbreviation)
+FROM city AS c      
+GROUP BY state_abbreviation
+ORDER BY num_cities;
 
 -- Include the names of the smallest and largest parks
-
+SELECT park_name, area
+FROM park p,
+     (
+		 SELECT MIN(area) as smallest, MAX(area) as largest
+		 FROM park
+	 ) as largest_smallest
+WHERE p.area = largest_smallest.smallest OR p.area = largest_smallest.largest;
 
 -- List the capital cities for the states in the Northeast census region.
 
