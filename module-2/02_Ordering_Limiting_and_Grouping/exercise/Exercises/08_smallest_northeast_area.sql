@@ -2,3 +2,6 @@
 -- Expected answer is around 4,000
 -- (1 row)
 
+select MIN (area) as smallest_northeast_area
+from state
+where census_region = 'Northeast';
