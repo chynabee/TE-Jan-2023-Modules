@@ -2,3 +2,11 @@
 -- Order the results by title (A-Z).
 -- (81 rows)
 
+SELECT movie.title, movie.tagline 
+FROM movie
+JOIN movie_genre
+	ON movie_genre.movie_id = movie.movie_id
+JOIN genre
+	ON movie_genre.genre_id = genre.genre_id
+WHERE genre_name = 'Fantasy'
+ORDER by movie.title;
