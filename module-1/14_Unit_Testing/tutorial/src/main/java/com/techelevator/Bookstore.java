@@ -33,6 +33,9 @@ public class Bookstore {
         shoppingCart.add(myCoffee);
         shoppingCart.add(myFriendsCoffee);
 
+        //Normal item
+
+
         // Print a receipt
         System.out.println(shoppingCart.receipt());
     }

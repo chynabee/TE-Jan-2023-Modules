@@ -134,7 +134,7 @@ public class LockBankATM {
 			}
 
 			//if we are using a map
-			//this.customer.addBankAccountToMap(checking);
+			//this.inventory.addBankAccountToMap(checking);
 
 		} else {
 			System.out.println("We're sorry - you need to deposit at least " + BankAccount.MIN_OPENING_DEPOSIT);

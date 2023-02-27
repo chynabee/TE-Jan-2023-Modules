@@ -20,8 +20,4 @@ public abstract class Wall {
     public abstract int getArea();
 
 
-
-
-
-
 }

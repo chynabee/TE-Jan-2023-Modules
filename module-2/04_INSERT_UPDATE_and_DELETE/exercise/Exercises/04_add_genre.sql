@@ -4,9 +4,11 @@ VALUES ('Sports');
 	
 INSERT INTO movie_genre(movie_id, genre_id)
 VALUES ((SELECT movie_id
-		 FROM movie
-		 WHERE title = 'Coach Carter'), 11771);
-
+	   FROM movie
+	   WHERE title = 'Coach Carter'),
+	   (SELECT genre_id
+	   FROM genre
+	   WHERE genre_name = 'Sports'));
 
 
 

@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class BookReader {
+public class  BookReader {
     static private final String BEGIN_MARKER = "*** START OF";
     static private final String END_MARKER = "*** END OF";
     public static void main(String[] args) {
@@ -27,6 +27,16 @@ public class BookReader {
         /*
         Step 2: Step Two: Open the book file and handle errors
          */
+        File bookFile = new File (filePath);
+
+        Scanner file = new Scanner(file);
+
+        try(Scanner fileInput = new Scanner(bookFile)) {
+
+
+        } catch (FileNotFoundException ex) {
+            
+        }
 
     }
 }
