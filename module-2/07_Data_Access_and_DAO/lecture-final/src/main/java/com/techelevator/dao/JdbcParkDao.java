@@ -83,27 +83,98 @@ public class JdbcParkDao implements ParkDao {
 
     @Override
     public Park createPark(Park park) {
-        return new Park();
+
+        //Step 1 - declare the variable that we want to return
+
+        // Don't really need this because we are already receiving a park as a parameter
+        // and we can also just pull the park we create from the database
+
+
+        //Step 2 - create the sql we want to run on the database
+        String sql = "INSERT INTO park(park_name, date_established, area, has_camping)\n" +
+                        "VALUES(?,?,?, ?)  RETURNING park_id;";
+
+        //Step 3 - send the sql to the database
+
+        int parkId = jdbcTemplate.queryForObject(sql, // from this tried and true recipe
+                                                 int.class, // we made this cake
+                                                 park.getParkName(), //using these ingredients
+                                                 park.getDateEstablished(),
+                                                 park.getArea(),
+                                                 park.getHasCamping());
+
+        //Step 4 - convert our results to the return type we want
+
+
+        //Step 5 return our value
+        return getPark(parkId);
     }
 
     @Override
     public void updatePark(Park park) {
+        //Step 1 - declare a variable for our return type
+        // There is no return type
 
+        //Step 2 - declare our sql
+        String sql = "UPDATE park\n" +
+                    "SET park_name = ?,\n" +
+                    "    date_established = ?,\n" +
+                    "\tarea = ?,\n" +
+                    "\thas_camping = ?\n" +
+                    "WHERE park_id = ?;";
+
+        //Step 3 - send our sql to the database
+        jdbcTemplate.update(sql, park.getParkName(), park.getDateEstablished(), park.getArea(),
+                park.getHasCamping(), park.getParkId());
+
+        //Step 4 - convert any results
+        // no results to convert
+
+        //step 5 return our data
+        // nothing to return
     }
 
     @Override
     public void deletePark(int parkId) {
 
+        //Step 1 - declare a variable for our return type
+        // There is no return type
+
+        //Step 2 - write the sql
+
+        //First delete any foreign key records from the park_state table
+        String sql1 = "DELETE \n" +
+                "FROM park_state\n" +
+                "WHERE park_id = ?;";
+        jdbcTemplate.update(sql1, parkId);
+
+        //Now I can delete from the park table without violating any key constraints
+        String sql2 = "DELETE\n" +
+                "FROM park\n" +
+                "WHERE park_id = ?;";
+
+        //Step 3 - send the query to the database
+        jdbcTemplate.update(sql2, parkId);
     }
 
     @Override
     public void addParkToState(int parkId, String stateAbbreviation) {
+
+        String sql = "INSERT INTO park_state(park_id, state_abbreviation)\n" +
+                "VALUES (?, ?);";
+
+        jdbcTemplate.update(sql, parkId, stateAbbreviation);
 
     }
 
     @Override
     public void removeParkFromState(int parkId, String stateAbbreviation) {
 
+        String sql = "DELETE\n" +
+                "FROM park_state\n" +
+                "WHERE park_id = ? AND state_abbreviation = ?;";
+
+        jdbcTemplate.update(sql, parkId, stateAbbreviation );
     }
 
     private Park mapRowToPark(SqlRowSet results) {
