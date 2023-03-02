@@ -81,6 +81,39 @@ public class JdbcParkDao implements ParkDao {
         return parks;
     }
 
+    public  List<Park> searchByParkName(String name) {
+
+        //Step 1 - A list of parks are what we want to return
+        List<Park> parks = new ArrayList<>();
+
+        //Step 2 - Write our sql
+        String sql = "SELECT park.park_id, park_name, date_established, park.area, has_camping\n" +
+                "FROM park\n" +
+                "JOIN park_state\n" +
+                "\tON park.park_id = park_state.park_id\n" +
+                "JOIN state\n" +
+                "\tON park_state.state_abbreviation = state.state_abbreviation\n" +
+                "WHERE park_name ILIKE ? OR state_name ILIKE ?;";
+
+        //Step 3 - Send our SQL to the database
+        // for our searchTerm we want to manually add the wild card characters to indicate what the LIKE should
+        // look for
+        String parkSearchTerm = "%" + name + "%";
+        String stateSearchTerm = "%" + name + "%";
+
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, parkSearchTerm, stateSearchTerm);
+
+        //Step 4 :
+        while(results.next()){
+            Park park = mapRowToPark(results);
+            parks.add(park);
+        }
+
+        //Step 5
+        return parks;
+    }
+
+
     @Override
     public Park createPark(Park park) {
 
