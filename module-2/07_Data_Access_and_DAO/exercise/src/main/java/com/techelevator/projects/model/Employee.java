@@ -1,5 +1,6 @@
 package com.techelevator.projects.model;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 public class Employee {
@@ -49,9 +50,7 @@ public class Employee {
 	public LocalDate getBirthDate() {
 		return birthDate;
 	}
-	public void setBirthDate(LocalDate birthDate) {
-		this.birthDate = birthDate;
-	}
+	public void setBirthDate(LocalDate birthDate) { this.birthDate = birthDate;}
 	public LocalDate getHireDate() {
 		return hireDate;
 	}
