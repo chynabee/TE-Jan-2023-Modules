@@ -38,7 +38,7 @@ CREATE TABLE witness_sighting(
 	CONSTRAINT fk_witness_sighting_sighting FOREIGN KEY (sighting_id) REFERENCES sighting(sighting_id)
 );
 
-
+INSERT INTO sighting ()
 
 
 COMMIT;
