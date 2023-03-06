@@ -26,7 +26,7 @@ public class AuctionService {
 
     public Auction[] getAuctionsMatchingTitle(String title) {
 
-        String path = API_BASE_URL + "?title=" + title;
+        String path = API_BASE_URL + "?title_like=" + title;
         return restTemplate.getForObject(path, Auction[].class);
     }
 
