@@ -1,5 +1,6 @@
 package com.techelevator.hotels.services;
 
+import com.techelevator.hotels.model.AstronomyPicOfDay;
 import com.techelevator.hotels.model.City;
 import com.techelevator.hotels.model.Hotel;
 import com.techelevator.hotels.model.Review;
@@ -46,8 +47,10 @@ public class HotelService {
         return restTemplate.getForObject(path, Hotel[].class);
     }
 
-    public City getWithCustomQuery(){
-        return null;
+    public AstronomyPicOfDay getWithCustomQuery(){
+
+        String path = "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY";
+        return restTemplate.getForObject(path, AstronomyPicOfDay.class);
     }
 
 }

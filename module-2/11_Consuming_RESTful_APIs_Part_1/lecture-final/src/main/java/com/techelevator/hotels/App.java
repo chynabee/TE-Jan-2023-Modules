@@ -1,5 +1,6 @@
 package com.techelevator.hotels;
 
+import com.techelevator.hotels.model.AstronomyPicOfDay;
 import com.techelevator.hotels.model.Hotel;
 import com.techelevator.hotels.model.Review;
 import com.techelevator.hotels.services.ConsoleService;
@@ -50,7 +51,13 @@ public class App {
                 consoleService.printHotels(hotels);
 
             } else if (menuSelection == 6) {
-                System.out.println("Not implemented - Create a custom Web API query here");
+
+                AstronomyPicOfDay pic = hotelService.getWithCustomQuery();
+                System.out.println("Title: " + pic.getTitle());
+                System.out.println("Photo By: " + pic.getPhotographer());
+                System.out.println("Explanation: " + pic.getExplanation());
+                System.out.println("URL: " + pic.getUrl());
+
             } else if (menuSelection == 0) {
                 continue;
             } else {

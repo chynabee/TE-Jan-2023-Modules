@@ -7,6 +7,16 @@ public class Hotel {
     private int stars;
     private int roomsAvailable;
     private String coverImage;
+    private Address address;
+
+    //constructor
+    public Hotel(){
+
+    }
+
+    public Hotel(String name) {
+        this.name = name;
+    }
 
     public int getId() {
         return id;
@@ -28,6 +38,14 @@ public class Hotel {
         return coverImage;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "\n--------------------------------------------" +
@@ -37,6 +55,7 @@ public class Hotel {
                 "\n Name: " + name +
                 "\n Stars: " + stars +
                 "\n Rooms Available: " + roomsAvailable +
-                "\n Cover Image: " + coverImage;
+                "\n Cover Image: " + coverImage +
+                "\n Address: " + address.toString();
     }
 }
