@@ -76,6 +76,8 @@ public class HotelService {
         } catch(ResourceAccessException ex) {
             //ResourceAccessException means that we could not find the server or something we were asking for from the server
             BasicLogger.log(ex.getMessage());
+        } catch (Exception ex) {
+            BasicLogger.log(ex.getMessage());
         }
 
 
