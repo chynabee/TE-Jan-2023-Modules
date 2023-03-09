@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping(path="/hotels")
 public class HotelController {
 
     private HotelDao hotelDao;
@@ -27,7 +28,7 @@ public class HotelController {
      *
      * @return a list of all hotels in the system
      */
-    @RequestMapping(path = "/hotels", method = RequestMethod.GET)
+    @RequestMapping(path = "", method = RequestMethod.GET)
     public List<Hotel> list(@RequestParam(required=false) String state,
                             @RequestParam(required=false) String city) {
 
@@ -44,25 +45,16 @@ public class HotelController {
      * @param id the id of the hotel
      * @return all info for a given hotel
      */
-    @RequestMapping(path = "/hotels/{id}", method = RequestMethod.GET)
+    @RequestMapping(path = "/{id}", method = RequestMethod.GET)
     public Hotel get(@PathVariable int id) {
         return hotelDao.get(id);
     }
 
-
-    @RequestMapping(path = "/reservations", method = RequestMethod.GET)
-    public List<Reservation> getReservations(){
-        return reservationDao.findAll();
-    }
-
-    @RequestMapping(path = "/reservations/{id}", method = RequestMethod.GET)
-    public Reservation getReservation(@PathVariable int id){
-        return reservationDao.get(id);
-    }
-
     //localhost:8080/hotels/3/reservations
-    @RequestMapping(path="/hotels/{hotelId}/reservations", method= RequestMethod.GET)
+    @RequestMapping(path="/{hotelId}/reservations", method= RequestMethod.GET)
     public List<Reservation> getReservationsByHotel(@PathVariable int hotelId){
         return reservationDao.findByHotel(hotelId);
     }
+
+
 }
