@@ -1,0 +1,34 @@
+/* To indicate the style
+ for a specific tag */
+ h1 {
+     color: blue;
+ }
+
+ /* To indicate the style
+ for tags that share 
+ a class put a . in front
+ of the class name */
+ .red {
+     color:red;
+ }
+
+ /*
+To indicate the style
+for a specific id, 
+put a hashtag and then
+the id name
+ */
+ #myParagraph{
+     color:green;
+ }
+
+ img {
+     width: 200px;
+ }
+
+ body {
+     font-family:'Times New Roman', Times, serif;
+ }
+td{
+     font-size: 15px;
+ }
