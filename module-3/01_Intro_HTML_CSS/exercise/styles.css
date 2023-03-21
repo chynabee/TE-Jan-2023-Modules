@@ -1,0 +1,141 @@
+
+body {
+    background-color:#C21807;
+
+}
+
+h1 {
+    color: white;
+    font-size: 100px;
+    text-align: center;
+  
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    text-decoration: underline;
+    
+}
+
+h3 {
+    color: white;
+    text-align: center;
+    font-size: 75px;
+    text-decoration-line:overline;
+
+}
+
+h4 {
+    text-align:left;
+    text-decoration: underline;
+    font-size: 45px;
+}
+
+h5 {
+    text-align:left;
+    text-decoration: underline;
+    font-size: 45px;
+
+}
+
+#quotes-section {
+    font-size: 45px;
+    text-align: center;
+    font-style: italic;
+}
+
+.album-cover-diddy {
+    display:inline-block;
+    width:300px;
+    height: 100px;
+
+}
+
+p {
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    background-color: black;
+
+}
+
+.diddyPhoto {
+    height: 200px;
+    width: 500px;
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+#diddy-photo-list {
+    text-align: center;
+    margin-left: auto;
+    margin-right:auto;
+}
+
+
+
+.diddyPhoto {
+    width: 300px;
+    height: 400px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+table thead tr {
+    background-color: black;
+}
+
+table tbody tr {
+    background-color: black;
+}
+
+table, th, td {
+    border: 10px solid;
+    
+  }
+ 
+table {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table tbody tr:hover {
+    background-color: lightgrey;
+}
+
+th{
+    text-align: center;
+    font-size: 45px;
+    text-decoration-line: underline;
+    color: white;
+}
+td {
+    text-align: center;
+    font-size: 40px;
+    color:white;
+
+}
+
+
+
+blockquote {
+    text-align: center;
+    font-size: 65px;
+}
+
+#links-section {
+    text-align: left;
+}
+
+nav {
+    font-size: 35px;
+
+}

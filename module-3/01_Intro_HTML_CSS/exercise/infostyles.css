@@ -1,0 +1,19 @@
+body {
+    background-color:#C21807;
+}
+
+form {
+    background-color: lightgrey;
+}
+
+input[type=text] {
+    background-color: white;
+   
+  }
+
+  input[type=email] {
+    background-color:white;
+   
+  }
+  
+ 
