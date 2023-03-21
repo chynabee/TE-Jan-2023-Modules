@@ -24,6 +24,7 @@ the id name
 
  img {
      width: 200px;
+     display: block;
  }
 
  body {
@@ -31,4 +32,19 @@ the id name
  }
 td{
      font-size: 15px;
+ }
+
+ form div label {
+     color: blue;
+ }
+
+ p {
+     height: 75px;
+     width:50%;
+ }
+
+ span{
+     display: inline-block;
+     height: 75px;
+     width:75px;
  }
