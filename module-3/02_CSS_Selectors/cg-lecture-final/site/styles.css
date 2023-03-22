@@ -1,15 +1,19 @@
+body{
+    width:100vw;
+    height:100vh;
+    background-color: #778899;
+}
+
 
 /*
 If we want to select all instances of a particular tag, 
 we just put the tag name
 */
-h1{
-    text-align: center;
-}
+h1,
 blockquote{
     text-align: center;
 }
-img {
+body #movie-posters-list div img {
     width: 200px;
     height: 300px;
 }
@@ -87,14 +91,17 @@ table tbody tr td {
     text-align: center;
 }
 
-#greenLantern{
+body img:nth-child(1){
     width:100px;
     object-fit:contain;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
 
     /* Position */
 
     /*normal*/
-    /*position: static;*/
+    position: static;
 
     /*relative - control where the element
     is on the page relative to where
@@ -111,6 +118,14 @@ table tbody tr td {
 
     /*fixed - placed relative to the browser
     window, follows the scroll */
-    position:fixed;
-    left: 100px; 
+    /*position:fixed;
+    left: 100px;*/ 
+}
+
+a:hover{
+   font-size: 25px;
+}
+
+a:visited {
+    color: purple;
 }
