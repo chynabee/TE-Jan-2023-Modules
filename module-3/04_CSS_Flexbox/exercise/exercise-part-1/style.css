@@ -4,19 +4,35 @@ body {
 }
 
 header {
-  text-align: center;;
+  background-color: #F0F0F0;
+  padding: 20px;
+  display: flex;
+  flex-grow: 10;
+}
+
+.logo {
+  width: 140px;
 }
 
 ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
 }
 
 li {
-  font-size: 1.5rem;
+
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
   color: #707070;
+  padding: 0 20px 0 0;
   margin-left: 20px;
+  
 }
 
 a,
@@ -28,4 +44,8 @@ a:visited {
 a:hover {
   color: #00AFEF;
   text-decoration: underline;
+}
+
+nav {
+  flex-grow: 99;
 }
