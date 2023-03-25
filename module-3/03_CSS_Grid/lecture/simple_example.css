@@ -1,21 +1,44 @@
+div {
+    font-size: 25px;
+    color: white;
+}
+
 #block1{
     background-color:blue;
+    grid-area: block1;
 }
 
 #block2{
     background-color:red;
+    grid-area: block2;
 }
 
 #block3{
     background-color:yellow;
+    color: black;
+    grid-area: block3;
 }
 
 #block4{
     background-color:purple;
+    grid-area: block4;
 }
 
 #block5{
     background-color:gray;
+    grid-area: block5;
+}
+
+#gridContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "block1 block1 block3 block3"
+    "block2 block4 block3 block3"
+    "block2 block4 block3 block3"
+    "block5 block5 block3 block3"
+    ;
+
 }
 
 /****/

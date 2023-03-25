@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<a href="index.html">Back To Home</a>
+<h1>Reservations</h1>    
+
+<form method="POST" action="/api/reservations">
+    
+    <div>
+        <label for="fullName">Name:</label>
+        <input id="fullName" type="text" name="personName"/> 
+    </div>      
+    
+    <div>
+        <label for="numOfGuests">Number Of Guests:</label>
+        <input id="numOfGuests" type="number" name="guests"/> 
+    </div>     
+    
+    <div>
+        <label for="reservationDate">Date:</label>
+        <input id="reservationDate" type="date" name="date"/> 
+    </div>         
+    
+    <div>
+        <label for="reservationTime">Time:</label>
+        <input id="reservationTime" type="time" name="time"/> 
+    </div>     
+
+    <input type="submit"/>
+
+</form>
+    
+</body>
+</html>

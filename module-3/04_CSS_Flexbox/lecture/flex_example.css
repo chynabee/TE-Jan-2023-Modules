@@ -1,6 +1,29 @@
 body{
     width:95vw;
-    height: 95vh;    
+    height: 95vh;  
+    
+    display:flex;
+
+    /*
+    when the flex-direction is a row
+    the justify content will control the horizontal 
+    space and the align items will control the vertical
+    space. Some common options for placement/spacing
+    are:
+    flex-start,
+    flex-end,
+    center,
+    space-between,
+    space-around,
+    stretch
+    ;
+    */
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    flex-wrap:wrap-reverse;
+    gap: 5px; /*adds space around each flex */
+
 }
 
 
@@ -9,25 +32,32 @@ div {
     height:100px;
     text-align:center;
     font-size: 50px;
+    flex-grow: 1; /*fill the space*/
 }
 
 #div1 {
     background-color: blue;
+   /* flex-grow: 1.5;*/
+   order: 500;
 }
 
 #div2 {
     background-color: red;
+    order:200;
 }
 
 #div3 {
     background-color: yellow;
+    order: 400;
 }
 
 #div4 {
     background-color: green;
+    order:300;
 }
 
 #div5 {
     background-color: purple;
+    order:100;
 
 }

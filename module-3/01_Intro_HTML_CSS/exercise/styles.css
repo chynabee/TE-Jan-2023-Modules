@@ -40,17 +40,20 @@ h5 {
 
 }
 
+.diddyPhoto {
+    width: 400px;
+    height: 500px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
 #quotes-section {
     font-size: 45px;
     text-align: center;
     font-style: italic;
-}
-
-.album-cover-diddy {
-    display:inline-block;
-    width:300px;
-    height: 100px;
-
 }
 
 p {
@@ -61,31 +64,14 @@ p {
 
 }
 
-.diddyPhoto {
-    height: 200px;
-    width: 500px;
-}
+body #diddy-photo-list div img {
 
-img {
-    width: 200px;
-    height: 200px;
-}
-
-#diddy-photo-list {
-    text-align: center;
-    margin-left: auto;
-    margin-right:auto;
-}
-
-
-
-.diddyPhoto {
-    width: 300px;
-    height: 400px;
-    display: block;
-  margin-left: auto;
-  margin-right: auto;
-
+    width: 400px;
+    height: 300px;
+   display:flex;
+    margin-left: 60%;
+    margin-right: 60%;
+  
 }
 
 table thead tr {

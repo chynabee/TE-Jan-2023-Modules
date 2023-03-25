@@ -1,0 +1,120 @@
+
+/*
+If we want to select all instances of a particular tag
+we just put the tag name
+*/
+h1 {
+    text-align: center;
+}
+
+blockquote {
+    text-align: center;
+}
+img {
+    width: 200px;
+    height: 300px;
+}
+
+
+
+/*
+To select something a class
+put a . in from the class name
+*/
+.movie-poster {
+    width: 225px;
+    display: inline-block;
+    background-color: gray;
+    margin: 15px;/*if i want the photos to overlap
+    use negative px amount*/
+    border: 5px solid purple;
+    border-radius: 5px;
+    padding: 10px;/*the space between the elements border
+    and its content*/
+}
+
+.marvel {
+    background-color: #ED1D24;
+}
+
+.dc {
+    background-color: black;
+}
+/*
+To select something by an id put a hashtag in front
+of the id
+*/
+#movie-posters-list {
+    text-align: center;
+}
+
+table {
+    border: 1px solid black;
+}
+
+/*
+we can list the path to this specific element to 
+identify it, so we can say give me the row that is 
+in the thead that is in the table
+*/
+table thead tr {
+    background-color: lightgreen;
+}
+
+/*
+We can use nth child to indicate only to apply the styling
+to every other(even or odd) or a specific element
+nth-child(1) - give me the first element
+nth-child(2) - give me the second element
+*/
+table tbody tr:nth-child(odd) {
+    background-color: lightgrey;
+}
+
+table thead tr th:nth-child(1) {
+    width: 20%;;
+}
+
+table thead tr th:nth-child(2) {
+    width: 15%;;
+}
+
+/*
+hover will only apply the style to an element
+when the mouse is over it
+*/
+table tbody tr:hover {
+    background-color: lightblue;
+}
+
+table tbody tr td {
+    text-align: center;
+}
+
+#greenLantern {
+    width: 100px;
+    object-fit: contain;
+
+    /* Position */
+
+    /*normal*/
+   /* position: static;*/
+
+    /*relative- control where the element is on 
+    the page relative to where it would have 
+    originally been*/
+ /* position: relative;
+    left: 200px;
+    top:500px; */
+
+    /*absolute- placed at a specific point
+    does not take up space */
+   /* position:absolute;
+    bottom: 100px;
+    right:10px; */
+
+    /*fixed - placed relative to the brower window,
+    follows the scroll */
+   /* position: fixed;
+    left: 100px; */ 
+}

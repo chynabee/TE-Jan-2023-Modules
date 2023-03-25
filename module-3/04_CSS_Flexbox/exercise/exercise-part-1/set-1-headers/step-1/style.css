@@ -16,9 +16,13 @@ ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
+<<<<<<< HEAD
   display: flex;
   justify-content: start;
 
+=======
+  display:flex;
+>>>>>>> aeb5531bd58c60bad70b2c4a4b81bd931d33e61a
 }
 
 li {

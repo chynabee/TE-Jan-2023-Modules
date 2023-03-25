@@ -1,0 +1,44 @@
+/* to indicate the style for 
+a specific tag */
+
+h1 {
+    color: blue;
+}
+
+/*to indicate the style for
+tags that share a class
+put a . in front of the class name */
+.red {
+    color:red
+}
+
+/* to indicate the style for 
+a specific id, put a hashtag
+and then the id name
+*/
+#myParagraph{
+    color:green;
+}
+
+/*to change the size of the images
+in your file*/
+img{
+    width: 200px;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+td {
+    font-size: 15px;
+}
+
+p {
+    height: 75px;
+    width: 50%;
+}
+
+span {
+    height: 75px;
+    width: 50%;
+}
