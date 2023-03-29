@@ -1,32 +1,32 @@
-const bookName = 'Cigar Parties for Dummies';
-const description = 'Host and plan the perfect cigar party for all of your squirrelly friends.';
+const bookName = 'Bigfoot Hunting For Dummies';
+const description = 'Tired of people on History Channel having all the fun?';
 const reviews = [
   {
     reviewer: 'Malcolm Madwell',
     title: 'What a book!',
     review:
-    "It certainly is a book. I mean, I can see that. Pages kept together with glue and there's writing on it, in some language. Yes indeed, it is a book!",
+    "10,000 hours later, I can declare I am the best Bigfoot hunter there ever was!",
     rating: 3
   },
   {
     reviewer: 'Tim Ferriss',
-    title: 'Had a cigar party started in less than 4 hours.',
+    title: 'I found Bigfoot in less than 4 hours.',
     review:
-      "It should have been called the four hour cigar party. That's amazing. I have a new idea for muse because of this.",
+      "It should have been called the four hour Bigfoot hunt. ",
     rating: 4
   },
   {
     reviewer: 'Ramit Sethi',
-    title: 'What every new entrepreneurs needs. A door stop.',
+    title: 'What every new entrepreneur needs.',
     review:
-      "When I sell my courses, I'm always telling people that if a book costs less than $20, they should just buy it. If they only learn one thing from it, it was worth it. Wish I learned something from this book.",
+      "After finding Bigfoot, you will feel empowered to start your own business.",
     rating: 1
   },
   {
     reviewer: 'Gary Vaynerchuk',
     title: 'And I thought I could write',
     review:
-      "There are a lot of good, solid tips in this book. I don't want to ruin it, but prelighting all the cigars is worth the price of admission alone.",
+      "There are a lot of good, solid tips in this book. If we love and embrace the mysteries of life, aren't we all hunting Bigfoot?",
     rating: 3
   }
 ];
