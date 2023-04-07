@@ -1,11 +1,15 @@
 <template>
   <div id="app">
+    <nav>
+      <router-link v-bind:to="{ name: 'Home' }">Home</router-link> |
+      <router-link v-bind:to="{ name: 'MyBooks' }">My Books</router-link>
+
+    </nav>
     <router-view />
   </div>
 </template>
 
 <script>
-
 export default {
   name: 'app'
 }
