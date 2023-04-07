@@ -1,0 +1,1 @@
+To load this plugin, go to your Chrome extensions, click "Load Unpacked" and select this folder
