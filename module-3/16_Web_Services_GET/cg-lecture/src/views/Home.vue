@@ -1,15 +1,10 @@
 <template>
-  <div>
-    <astronomy />
-  </div>
+  <div></div>
 </template>
 
 <script>
-import Astronomy from '../components/Astronomy.vue'
 
 export default {
-  components: {
-    Astronomy
-  }
+ 
 };
 </script>
