@@ -8,11 +8,52 @@
  * Functions start with the word function.
  * They don't have a return type and the naming convention is camel-case.
  */
+
+/*
+In java - a method includes more details, for instance a return type:
+public string getname() {
+  return name;
+}
+
+In javascript - its called a function, and we dont declare an access modifier
+(so no public or private) and we dont declare a return type. So in javascript
+that method would look like:
+function getName() {
+  return name;
+}
+
+*/
+
+
+
+
 function variables() {
   // Declares a variable where the value cannot be changed
+  //If a variable is not going to be changed, we can make it a constant
+  const name = "Chyna";
+  console.log(name);
+
   // Declares a variable those value can be changed
+  let age = 38;
+  console.log(age);
+  
+
   // Declares a variable that will always be an array
+  const weekdays = [
+    "Monday", 
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday"
+  ];
+
+  weekdays.push("Saturday");
+  weekdays.push("Sunday");
+
+  console.table(weekdays);
+
 }
+
 
 /**
  * Functions can also accept parameters.
@@ -74,10 +115,29 @@ function objects() {
   };
 
   // Log the object
+  console.table(person);
 
   // Log the first and last name
+  console.log(person.firstName + " " + person.lastName);
 
   // Log each employee
+  console.log("EACH INDIVIDUAL PRINT OUT:");
+  console.log(person.employees[0]);
+  console.log(person.employees[1]);
+  console.log(person.employees[2]);
+  console.log(person.employees[3]);
+
+  //with a for loop
+  console.log("PRINT OUT WITH FOR LOOP");
+  for(let i = 0; i < person.employees.length; i++) {
+    console.log(person.employees[i]);
+  }
+
+  //with a for each loop
+  console.log("PRINT OUT WITH FOR EACH LOOP");
+  for(let employee of person.employees) {
+    console.log(employee);
+  }
 }
 
 /*
@@ -91,10 +151,12 @@ earlier ones are overriden and the most recent one will be used.
 */
 
 function Add(num1, num2) {
+  console.log("Here in the first function");
   return num1 + num2;
 }
 
 function Add(num1, num2, num3) {
+  console.log("Here in the second function");
   return num1 + num2 + num3;
 }
 
@@ -138,4 +200,40 @@ function stringFunctions(value) {
         - trim()
         - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
     */
+}
+
+
+/*
+###################
+Array Methods
+###################
+
+*/
+
+
+function arrayFunctions() {
+
+  //To declare an empty array
+  const myArray = [];
+
+  //To declare an array with values out of the gate
+  const petsArray = ["dog", "cat", "ferret", "hamster"];
+
+  //if I want to add a new item at the end
+  petsArray.push("parrot");
+
+  //if I want to remove an item at the end
+  const lastElement = petsArray.pop();
+
+  console.log(lastElement);
+
+  //if we want to add an element at the beginning
+  petsArray.unshift("fish");
+
+  //if we want to remove an element at the beginning
+  petsArray.shift();
+
+  console.table(petsArray);
+
+  console.log("Does our array include ferret?" + petsArray.includes("ferret"));
 }

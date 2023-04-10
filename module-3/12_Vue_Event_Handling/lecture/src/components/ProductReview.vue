@@ -141,6 +141,11 @@ export default {
         return currentCount + (review.rating === 5);
       }, 0);
     }
+  },
+  methods: {
+    helloWorld(name) {
+      alert("Hello World and Hello" + name);
+    }
   }
 };
 </script>

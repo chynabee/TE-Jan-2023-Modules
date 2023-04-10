@@ -3,6 +3,7 @@ package com.techelevator.tenmo.dao;
 import com.techelevator.tenmo.model.Sighting;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
 import java.sql.Date;
@@ -10,19 +11,22 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
+//need to add @Component when adding @RestController to controller
+// when using @Autowired
+@Component
 public class JdbcSightingDao implements SightingDao {
 
     private final JdbcTemplate jdbcTemplate;
 
-    public JdbcSightingDao(DataSource dataSource) {
+    public JdbcSightingDao(JdbcTemplate jdbcTemplate) {
 
         //we are receiving the details of where the database is and the credentials
         //and feeding that to our jdbcTemplate so that when it runs sql it knows
         // where to run that sql
-        this.jdbcTemplate = new JdbcTemplate(dataSource);
+        this.jdbcTemplate = jdbcTemplate;
     }
 
-    public Sighting createSighting(Sighting sighting) {
+    public Sighting createSighting(Sighting sighting, int userId) {
 
         //Step 1 - declare a variable that is of the type we want to return
         //because this is an insert, I will return the sighting at the end
@@ -34,6 +38,12 @@ public class JdbcSightingDao implements SightingDao {
         //Step 3 - send this sql to the database
         int sightingId = jdbcTemplate.queryForObject(sql, int.class, sighting.getCity(), sighting.getStateAbbreviation(),
                 sighting.getDescription(), sighting.getSightingDateTime());
+
+        //make sure to wire up who was a witness
+        String sql2 = "INSERT INTO witness_sighting(sighting_id, witness_id)\n" +
+                "VALUES(?, ?);";
+
+        jdbcTemplate.update(sql2, sightingId, userId);
 
         return getSighting(sightingId);
     }

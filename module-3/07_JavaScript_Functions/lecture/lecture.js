@@ -27,7 +27,9 @@ function printToConsole(value) {
  * @param {number} firstParameter the first parameter to multiply
  * @param {number} secondParameter the second parameter to multiply
  */
-
+    function multiplyTogether(firstParameter, secondParameter) {
+      return firstParameter * secondParameter;
+    }
 /**
  * This version makes sure that no parameters are ever missing. If
  * someone calls this function without parameters, we default the

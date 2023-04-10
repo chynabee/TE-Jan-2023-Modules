@@ -3,6 +3,9 @@ package com.techelevator.hotels.services;
 import com.techelevator.hotels.model.Hotel;
 import com.techelevator.hotels.model.Reservation;
 import com.techelevator.util.BasicLogger;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestClientResponseException;
 import org.springframework.web.client.RestTemplate;
@@ -17,8 +20,35 @@ public class HotelService {
      * Create a new reservation in the hotel reservation system
      */
     public Reservation addReservation(Reservation newReservation) {
-        // TODO: Implement method
-        return null;
+
+        String path = API_BASE_URL + "reservations";
+
+        //Anytime that we are doing a POST or PUT we will create these headers and indicate
+        //content type is JSON FORMAT
+        //These two lines will typically be the same in either context
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        //Now we add the data we are sending along with the headers to the request
+        //the data type in the <> always represents what data type we are sending
+        HttpEntity<Reservation> request = new HttpEntity<>(newReservation, headers);
+
+
+       //Instead of getForObject we use postForObject to do the post
+       //which will create the new reservation and return it with an id
+        Reservation returnedReservation = null;
+        try { //always do a try/catch
+             returnedReservation = restTemplate.postForObject(path, request, Reservation.class);
+        } catch (RestClientResponseException ex) {
+            //RestClientResponseException means that we found the server but something went wrong and the server
+            //is sending us back a status code and message that we can use
+            BasicLogger.log("Error:" + ex.getRawStatusCode() + " - " + ex.getStatusText());
+        } catch (ResourceAccessException ex) {
+            //ResourceAccessException means that we could not find the server or something we were asking for from the server
+            BasicLogger.log(ex.getMessage());
+        }
+
+        return returnedReservation;
     }
 
     /**
@@ -26,16 +56,53 @@ public class HotelService {
      * reservation
      */
     public boolean updateReservation(Reservation updatedReservation) {
-        // TODO: Implement method
-        return false;
+
+        boolean successful = false;
+        String path = API_BASE_URL + "reservations/" + updatedReservation.getId();
+
+        //declare our headers that we are sending json
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        //Pass in variable name of what we are sending and headers in parentheses
+        HttpEntity<Reservation> request = new HttpEntity<>(updatedReservation, headers);
+
+        //not getting anything returned since we are updating something. So just path and request in the parentheses
+        try {
+            restTemplate.put(path, request);
+            successful = true;
+        } catch (RestClientResponseException ex) {
+            //RestClientResponseException means that we found the server but something went wrong and the server
+            //is sending us back a status code and message that we can use
+            BasicLogger.log("Error:" + ex.getRawStatusCode() + " - " + ex.getStatusText());
+        } catch (ResourceAccessException ex) {
+            //ResourceAccessException means that we could not find the server or something we were asking for from the server
+            BasicLogger.log(ex.getMessage());
+        }
+        return successful;
     }
 
     /**
      * Delete an existing reservation
      */
     public boolean deleteReservation(int id) {
-        // TODO: Implement method
-        return false;
+
+        boolean successful = false;
+
+        try{
+        String path = API_BASE_URL + "reservations/" + id;
+        restTemplate.delete(path);
+        successful = true;
+        } catch (RestClientResponseException ex) {
+            //RestClientResponseException means that we found the server but something went wrong and the server
+            //is sending us back a status code and message that we can use
+            BasicLogger.log("Error:" + ex.getRawStatusCode() + " - " + ex.getStatusText());
+        } catch (ResourceAccessException ex) {
+            //ResourceAccessException means that we could not find the server or something we were asking for from the server
+            BasicLogger.log(ex.getMessage());
+        }
+
+        return successful;
     }
 
     /* DON'T MODIFY ANY METHODS BELOW */

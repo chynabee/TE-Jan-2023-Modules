@@ -25,7 +25,9 @@ public class HotelService {
     public Reservation addReservation(Reservation newReservation) {
         Reservation returnedReservation = null;
 
-        //TODO: Add implementation
+        HttpEntity<Reservation> request = makeReservationEntity(newReservation);
+        String path = API_BASE_URL + "reservations";
+        returnedReservation = restTemplate.postForObject(path, request, Reservation.class);
         BasicLogger.log("HotelService.addReservation() has not been implemented");
 
         return returnedReservation;
@@ -79,8 +81,21 @@ public class HotelService {
     /**
      * List all reservations in the hotel reservation system
      */
-    public Reservation[] listReservations() {
+    public Reservation[] listReservations() { //for the most part all of this code will be cookie cutter code that we can reuse
+                                                //will just have to change the variable names
         Reservation[] reservations = null;
+
+        String path = API_BASE_URL + "reservations";
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(authToken);
+        HttpEntity<Void> request = new HttpEntity<>(headers);
+
+        //we can not use the getForObject anymore because it only accepts a path and a return type
+        //we can instead use the method exchange, but we will have to indicate our verb explicitly
+        //additionally, to get the data we want from the response we need to call getBody()
+        ResponseEntity<Reservation[]> response = restTemplate.exchange(path, HttpMethod.GET, request, Reservation[].class);
+        reservations = response.getBody();
         try {
             ResponseEntity<Reservation[]> response = restTemplate.exchange(API_BASE_URL + "reservations",
                     HttpMethod.GET, makeAuthEntity(), Reservation[].class);

@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface SightingDao {
 
-    public Sighting createSighting(Sighting sighting);
+    public Sighting createSighting(Sighting sighting, int userId);
     public Sighting getSighting(int id);
     public List<Sighting> getSightingsByState(String state);
 

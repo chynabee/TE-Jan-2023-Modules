@@ -1,19 +1,23 @@
 <template>
   <div id="todo-app">
-
+    <to-do-list></to-do-list>
   </div>
 </template>
 
+
+
 <script>
+import ToDoList from './components/ToDoList';
 
 
 export default {
   name: 'app',
   components: {
-
-  }
+  TodoList
 }
-</script>
+}
+</scrip
+    ToDoListt>
 
 <style>
 body {
