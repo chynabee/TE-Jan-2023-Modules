@@ -9,10 +9,8 @@
     </div>
   </form>
 </template>
-
 <script>
 import topicService from "../services/TopicService";
-
 export default {
   name: "update-topic",
   props: ["topicID"],
@@ -25,7 +23,14 @@ export default {
     updateTopic() {
       const topic = { id: this.topicID, title: this.title };
       // call topic service update method
-    }
+      topicService.updateTopic(this.topicID, topic).then(
+        (response) =>{
+          if(response.status === 200) {
+            this.$router.push({name: "Home"})
+          }
+        }
+      )
+      }
   },
   created() {
     topicService
@@ -42,6 +47,5 @@ export default {
   }
 };
 </script>
-
 <style>
 </style>

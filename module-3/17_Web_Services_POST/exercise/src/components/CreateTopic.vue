@@ -9,10 +9,8 @@
     </div>
   </form>
 </template>
-
 <script>
 import topicService from "../services/TopicService";
-
 export default {
   name: "create-topic",
   data() {
@@ -24,11 +22,18 @@ export default {
     };
   },
   methods: {
-    saveTopic() {}
+    saveTopic() {
+topicService.addTopic(this.topic).then(
+(response) => {
+if(response.status === 201) {
+  this.$router.push({name: "Home"});
+}
+}
+)
+    }
   }
 };
 </script>
-
 <style>
 form {
   padding: 20px;
